@@ -3,6 +3,12 @@
 
 WeightedGraph::WeightedGraph() {}
 
+WeightedGraph WeightedGraph::newGraph()
+{
+    WeightedGraph graph;
+    return graph;
+}
+
 bool WeightedGraph::addCity(const QString& city) {
     if (!cities.contains(city)) // this line checks if the city already exisit in the map
     {
@@ -34,15 +40,26 @@ bool WeightedGraph::addRoute(const QString& city1, const QString& city2, int dis
     return true;
 }
 
-void WeightedGraph::printGraph() {
-    cout << "Adjacency Matrix:" << endl;
+QString WeightedGraph::printGraph() {
+    QString text = "";
+    text = text + "Adjacency Matrix:\n";
     for (int i = 0; i < matrix.size(); ++i) // this loop prints the citys' names
     {
-        cout << cities[i].toStdString() << ": ";
+        text = text + "City " + cities[i] + " is connected to :\n";
         for (int j = 0; j < matrix[i].size(); ++j) // this loop prints the routes for each city
         {
-            cout << matrix[i][j] << " ";
+            if (matrix[i][j])
+                text = text + " city " + cities[j] + " with distance " + QString::number(matrix[i][j]) + "\n";
         }
-        cout << endl;
     }
+    return text;
+}
+
+void WeightedGraph::deleteCity(QString city)
+{
+    int index = cities.indexOf(city);
+    cities.erase(cities.begin() + index);
+    for (int i =0;i<matrix.size();i++)
+        matrix[i].erase(matrix[i].begin() + index);
+    matrix.erase(matrix.begin() + index);
 }

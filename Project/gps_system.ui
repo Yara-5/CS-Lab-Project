@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="AddGraphB">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>60</y>
+      <x>180</x>
+      <y>10</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -27,11 +27,11 @@
      <string>Add Graph</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="DisplayGraph">
+   <widget class="QPushButton" name="DisplayGraphB">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>60</y>
+      <x>170</x>
+      <y>400</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -40,30 +40,160 @@
      <string>Display Graph</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="AdsCityB">
+   <widget class="QGroupBox" name="Add">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>130</y>
-      <width>80</width>
-      <height>24</height>
+      <x>20</x>
+      <y>60</y>
+      <width>231</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Add a new city</string>
+    </property>
+    <widget class="QPushButton" name="AdsCityB">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>40</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add City</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="newCityL">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="Delete">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>231</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Delete a city</string>
+    </property>
+    <widget class="QPushButton" name="DeleteCityB">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>40</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete City</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="CityToDel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>141</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Add New City</string>
+     <string>Create a new graph :(Deletes the previous one)</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="DeleteCityB">
+   <widget class="QLabel" name="GraphData">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>430</y>
+      <width>231</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Graph data here</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>400</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Display the graph data :</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="ShortestDistance">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>300</y>
+      <width>231</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Shortest Distance</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save graph data :</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SaveB">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>130</y>
+      <y>260</y>
       <width>80</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>Delete City</string>
+     <string>Save Graph</string>
     </property>
    </widget>
   </widget>
@@ -76,6 +206,12 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuGPS_System">
+    <property name="title">
+     <string>GPS System</string>
+    </property>
+   </widget>
+   <addaction name="menuGPS_System"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

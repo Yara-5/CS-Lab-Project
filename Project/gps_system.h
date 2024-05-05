@@ -20,11 +20,13 @@ public:
 private slots:
     void on_AddGraphB_clicked();
 
-    void on_DisplayGraph_clicked();
+    void on_DisplayGraphB_clicked();
 
     void on_AdsCityB_clicked();
 
     void on_DeleteCityB_clicked();
+
+    void on_SaveB_clicked();
 
 private:
     Ui::GPS_System *ui;

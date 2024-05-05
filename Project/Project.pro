@@ -9,15 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    add_edge.cpp \
     graph.cpp \
     main.cpp \
     gps_system.cpp
 
 HEADERS += \
+    SavedGraph.h \
+    add_edge.h \
     gps_system.h \
     graph.h
 
 FORMS += \
+    add_edge.ui \
     gps_system.ui
 
 # Default rules for deployment.

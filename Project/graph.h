@@ -1,7 +1,6 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include <vector>
 #include <QString>
 #include <QVector>
 
@@ -15,9 +14,11 @@ private:
 public:
     WeightedGraph();  // Constructor
 
+    WeightedGraph newGraph();
     bool addCity(const QString& city); // function to add city
     bool addRoute(const QString& city1, const QString& city2, int distance); // function to add route
-    void printGraph(); // function to print the graph ( the map )
+    QString printGraph(); // function to print the graph ( the map )
+    void deleteCity(QString);
 };
 
 #endif
