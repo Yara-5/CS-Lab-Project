@@ -9,7 +9,7 @@ GPS_System::GPS_System(QWidget *parent)
     , ui(new Ui::GPS_System)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: #F0EFEB;");
+    // this->setStyleSheet("background-color: #F0EFEB;");
 }
 
 GPS_System::~GPS_System()
