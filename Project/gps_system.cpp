@@ -3,6 +3,7 @@
 #include "graph.h"
 #include "SavedGraph.h"
 #include "add_edge.h"
+#include <QFile>
 
 GPS_System::GPS_System(QWidget *parent)
     : QMainWindow(parent)
@@ -47,7 +48,32 @@ void GPS_System::on_DeleteCityB_clicked()
 
 void GPS_System::on_SaveB_clicked()
 {
-    SavedGraph::saveGraphToFile(graph, "saved_graph.txt");
+    //QString currentDir = QCoreApplication::applicationDirPath();
+    //QString filePath = currentDir + "/Saved.txt";
+    QFile file("C:\\Users\\Yara\\Desktop\\CSCE 1102\\Project\\CS-Lab-Project\\Project\\Save.txt");
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream out(&file);
+        out<<graph.getCities().size()<<"\n";
+        for (int i=0;i<graph.getCities().size();i++)
+        {
+            out<<graph.getCities()[i]<<"\n";
+        }
+        for (int i=0;i<graph.getMatrix().size();i++)
+        {
+            for (int j=0; j<graph.getMatrix().size();j++)
+            {
+                out<<graph.getMatrix()[i][j]<<"\n";
+            }
+            out<<"\n";
+        }
+        file.close();
+    }
+    else
+    {
+        qDebug() << "Failed to open file for writing.";
+        return;
+    }
 }
 
 

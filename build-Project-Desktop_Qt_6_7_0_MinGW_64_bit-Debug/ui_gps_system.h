@@ -87,7 +87,7 @@ public:
         CityToDel->setGeometry(QRect(10, 40, 113, 24));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(20, 10, 181, 51));
+        label->setGeometry(QRect(20, 10, 171, 51));
         label->setWordWrap(true);
         GraphData = new QLabel(centralwidget);
         GraphData->setObjectName("GraphData");
@@ -104,7 +104,7 @@ public:
         SaveB->setGeometry(QRect(160, 270, 80, 24));
         AddingSource = new QGroupBox(centralwidget);
         AddingSource->setObjectName("AddingSource");
-        AddingSource->setGeometry(QRect(10, 320, 241, 80));
+        AddingSource->setGeometry(QRect(20, 320, 241, 80));
         picksource = new QPushButton(AddingSource);
         picksource->setObjectName("picksource");
         picksource->setGeometry(QRect(140, 40, 80, 24));
@@ -113,7 +113,7 @@ public:
         newCityL_3->setGeometry(QRect(10, 40, 113, 24));
         AddDestination = new QGroupBox(centralwidget);
         AddDestination->setObjectName("AddDestination");
-        AddDestination->setGeometry(QRect(10, 410, 231, 80));
+        AddDestination->setGeometry(QRect(20, 410, 231, 80));
         adddestination = new QPushButton(AddDestination);
         adddestination->setObjectName("adddestination");
         adddestination->setGeometry(QRect(140, 40, 80, 24));
@@ -133,7 +133,7 @@ public:
         GPS_System->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GPS_System);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 26));
+        menubar->setGeometry(QRect(0, 0, 800, 21));
         menuGPS_System = new QMenu(menubar);
         menuGPS_System->setObjectName("menuGPS_System");
         GPS_System->setMenuBar(menubar);
@@ -157,7 +157,7 @@ public:
         AdsCityB->setText(QCoreApplication::translate("GPS_System", "Add City", nullptr));
         Delete->setTitle(QCoreApplication::translate("GPS_System", "Delete a city", nullptr));
         DeleteCityB->setText(QCoreApplication::translate("GPS_System", "Delete City", nullptr));
-        label->setText(QCoreApplication::translate("GPS_System", "Create a new graph :(Deletes the previous one)", nullptr));
+        label->setText(QCoreApplication::translate("GPS_System", "Create a new graph : (Deletes the previous one)", nullptr));
         GraphData->setText(QString());
         label_3->setText(QCoreApplication::translate("GPS_System", "Display the graph data", nullptr));
         label_2->setText(QCoreApplication::translate("GPS_System", "Save graph data :", nullptr));

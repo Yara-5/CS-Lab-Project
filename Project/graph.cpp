@@ -1,5 +1,8 @@
 #include "graph.h"
 #include <iostream>
+#include <QFile>
+#include <QTextStream>
+#include <queue>
 
 WeightedGraph::WeightedGraph() {}
 
@@ -117,4 +120,36 @@ vector<int> WeightedGraph::dijkstra(const QString& source, const QString& destin
 bool WeightedGraph::hasCity(const QString& city) {
     // Check if the city exists in the cities vector
     return cities.contains(city);
+}
+
+void WeightedGraph::loadGraph()
+{
+    QFile file("C:\\Users\\Yara\\Desktop\\CSCE 1102\\Project\\CS-Lab-Project\\Project\\Save.txt");
+
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream in(&file);
+        QString line = in.readLine().trimmed();
+        int size = line.toInt();
+
+        for (int i=0;i<size;i++)
+        {
+            line = in.readLine().trimmed();
+            cities.push_back(line);
+        }
+        QVector<int> temp;
+        for (int i=0;i<size;i++)
+        {
+            matrix.push_back(temp);
+            for (int j=0;j<size;j++)
+            {
+                line = in.readLine().trimmed();
+                matrix[i].push_back(line.toInt());
+            }
+        }
+        file.close();
+    } else
+    {
+        return;
+    }
 }

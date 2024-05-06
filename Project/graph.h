@@ -3,7 +3,6 @@
 
 #include <QString>
 #include <QVector>
-#include <queue>
 #include <vector>
 
 using namespace std;
@@ -24,7 +23,7 @@ public:
     void displayPath(const QString& source, const QString& destination);
     vector<int> dijkstra(const QString& source, const QString& destination);
     bool hasCity(const QString& city);
-
+    void loadGraph();
     // Accessor methods
     const QVector<QString>& getCities() const { return cities; } // Getter for city names
     const QVector<QVector<int>>& getMatrix() const { return matrix; } // Getter for adjacency matrix
