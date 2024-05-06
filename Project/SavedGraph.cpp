@@ -3,7 +3,7 @@
 #include <QTextStream>
 #include <QDebug>
 
-
+WeightedGraph graph;
 
 void SavedGraph::saveGraphToFile(const WeightedGraph& graph, const QString& filename) {
     QFile file(filename);
