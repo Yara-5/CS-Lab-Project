@@ -17,10 +17,10 @@
    <widget class="QPushButton" name="AddGraphB">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>210</x>
       <y>10</y>
-      <width>80</width>
-      <height>24</height>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -30,10 +30,10 @@
    <widget class="QPushButton" name="DisplayGraphB">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>20</y>
-      <width>80</width>
-      <height>24</height>
+      <x>530</x>
+      <y>30</y>
+      <width>111</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>60</y>
+      <y>70</y>
       <width>231</width>
       <height>80</height>
      </rect>
@@ -80,7 +80,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>160</y>
+      <y>170</y>
       <width>231</width>
       <height>80</height>
      </rect>
@@ -117,8 +117,8 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>141</width>
-      <height>31</height>
+      <width>181</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -131,14 +131,14 @@
    <widget class="QLabel" name="GraphData">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>60</y>
-      <width>231</width>
-      <height>321</height>
+      <x>270</x>
+      <y>130</y>
+      <width>241</width>
+      <height>401</height>
      </rect>
     </property>
     <property name="text">
-     <string>Graph data here</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -147,34 +147,21 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>350</x>
       <y>20</y>
-      <width>141</width>
-      <height>16</height>
+      <width>161</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Display the graph data :</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="ShortestDistance">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>300</y>
-      <width>231</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Shortest Distance</string>
+     <string>Display the graph data</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>260</y>
+      <y>270</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -187,13 +174,127 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>260</y>
+      <y>270</y>
       <width>80</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
      <string>Save Graph</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="AddingSource">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>241</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Pick a source city</string>
+    </property>
+    <widget class="QPushButton" name="picksource">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>40</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pick City</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="newCityL_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="AddDestination">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>410</y>
+      <width>231</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Pick a destination</string>
+    </property>
+    <widget class="QPushButton" name="adddestination">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>40</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pick City</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="newCityL_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="ShortestPath">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>130</y>
+      <width>241</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ShortestPathLabel">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>90</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Shortest Path</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ShortestPathLabel_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>90</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Graph Data</string>
     </property>
    </widget>
   </widget>
@@ -203,7 +304,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuGPS_System">

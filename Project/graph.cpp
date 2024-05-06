@@ -62,3 +62,59 @@ void WeightedGraph::deleteCity(QString city)
         matrix[i].erase(matrix[i].begin() + index);
     matrix.erase(matrix.begin() + index);
 }
+
+
+vector<int> WeightedGraph::dijkstra(const QString& source, const QString& destination)
+{
+    int sourceIndex = cities.indexOf(source);
+    int destinationIndex = cities.indexOf(destination);
+
+    if (sourceIndex == -1 || destinationIndex == -1)
+    {
+        cerr << "Source or destination city not found in the graph." << endl;
+        return {};
+    }
+
+    vector<int> dist(cities.size(), INT_MAX);
+    vector<int> parent(cities.size(), -1);
+    dist[sourceIndex] = 0;
+
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    pq.push({0, sourceIndex});
+
+    while (!pq.empty())
+    {
+        int u = pq.top().second;
+        int d = pq.top().first;
+        pq.pop();
+
+        if (d > dist[u])
+            continue;
+
+        for (int v = 0; v < cities.size(); ++v)
+        {
+            if (matrix[u][v] != 0 && d + matrix[u][v] < dist[v])
+            {
+                dist[v] = d + matrix[u][v];
+                parent[v] = u;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    vector<int> path;
+    int curr = destinationIndex;
+    while (curr != -1)
+    {
+        path.push_back(curr);
+        curr = parent[curr];
+    }
+
+    reverse(path.begin(), path.end());
+    return path;
+}
+
+bool WeightedGraph::hasCity(const QString& city) {
+    // Check if the city exists in the cities vector
+    return cities.contains(city);
+}
