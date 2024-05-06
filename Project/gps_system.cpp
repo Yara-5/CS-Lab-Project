@@ -47,9 +47,7 @@ void GPS_System::on_DeleteCityB_clicked()
 
 void GPS_System::on_SaveB_clicked()
 {
-    // WRITE data into the file
-    // Save the currnt graph into the file
-    // It's better to empty the file and fil it from the bigining
+    SavedGraph::saveGraphToFile(graph, "saved_graph.txt");
 }
 
 
@@ -75,8 +73,9 @@ void GPS_System::on_adddestination_clicked()
         QString source = ui->newCityL_3->text(); // Assuming you have a QLineEdit widget named newCityL_3 for user input
         vector<int> shortestPath = graph.dijkstra(source, destination);
         QString shortestPathStr;
+        const QVector<QString>& cities = graph.getCities();
         for (int distance : shortestPath) {
-            shortestPathStr += graph.cities[distance] + " "; // Assuming you want to separate distances by a space
+            shortestPathStr += cities[distance] + " "; // Assuming you want to separate distances by a space
         ui->ShortestPath->setText(shortestPathStr);
         }
 

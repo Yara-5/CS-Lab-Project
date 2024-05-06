@@ -11,23 +11,23 @@ using namespace std;
 class WeightedGraph {
 private:
     QVector<QVector<int>> matrix;  // Adjacency matrix
-
-public:
     QVector<QString> cities;  // Vector of city names
 
+public:
     WeightedGraph();  // Constructor
 
     WeightedGraph newGraph();
     bool addCity(const QString& city); // function to add city
     bool addRoute(const QString& city1, const QString& city2, int distance); // function to add route
     QString printGraph(); // function to print the graph ( the map )
-    void deleteCity(QString);
+    void deleteCity(QString city);
     void displayPath(const QString& source, const QString& destination);
-    // Function to compute the shortest path
     vector<int> dijkstra(const QString& source, const QString& destination);
-
-    // Function to check if a city exists in the graph
     bool hasCity(const QString& city);
+
+    // Accessor methods
+    const QVector<QString>& getCities() const { return cities; } // Getter for city names
+    const QVector<QVector<int>>& getMatrix() const { return matrix; } // Getter for adjacency matrix
 };
 
-#endif
+#endif // GRAPH_H
