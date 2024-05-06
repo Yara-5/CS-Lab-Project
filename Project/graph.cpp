@@ -42,7 +42,6 @@ bool WeightedGraph::addRoute(const QString& city1, const QString& city2, int dis
 
 QString WeightedGraph::printGraph() {
     QString text = "";
-    text = text + "Adjacency Matrix:\n";
     for (int i = 0; i < matrix.size(); ++i) // this loop prints the citys' names
     {
         text = text + "City " + cities[i] + " is connected to :\n";
