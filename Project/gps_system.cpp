@@ -76,43 +76,26 @@ void GPS_System::on_SaveB_clicked()
 }
 
 
-void GPS_System::on_picksource_clicked()
+void GPS_System::on_computeB_clicked()
 {
-    QString source = ui->newCityL_3->text(); // Assuming you have a QLineEdit widget named sourceLineEdit for user input
-    if (graph.hasCity(source)) { // Assuming WeightedGraph has a function named hasCity to check if the city exists
-        ui->newCityL_3->setReadOnly(true); // Make the source line edit read-only
-        ui->picksource->setEnabled(false); // Disable the button to prevent changing the source city
-    } else {
-        qDebug() << "Invalid source city.";
-    }
-}
-
-void GPS_System::on_adddestination_clicked()
-{
-    QString destination = ui->newCityL_5->text(); // Assuming you have a QLineEdit widget named newCityL_5 for user input
-    if (graph.hasCity(destination)) { // Assuming WeightedGraph has a function named hasCity to check if the city exists
-        ui->newCityL_5->setReadOnly(true); // Make the destination line edit read-only
-        ui->adddestination->setEnabled(false); // Disable the button to prevent changing the destination city
-
-        // Now that both source and destination are specified, you can compute the shortest path here
-        QString source = ui->newCityL_3->text(); // Assuming you have a QLineEdit widget named newCityL_3 for user input
-        vector<int> shortestPath = graph.dijkstra(source, destination);
+    // Now that both source and destination are specified, you can compute the shortest path here
+    QString source =ui->Source->text();
+    QString destination = ui->Destination->text();
+    if (graph.hasCity(source) && graph.hasCity(destination))
+    {
+        vector<int> path = graph.dijkstra(source, destination);
         QString shortestPathStr;
         const QVector<QString>& cities = graph.getCities();
-        for (int distance : shortestPath) {
+        for (int distance : path)
             shortestPathStr += cities[distance] + " "; // Assuming you want to separate distances by a space
         ui->ShortestPath->setText(shortestPathStr);
-        }
-
         // You can use the shortestPath vector as needed, for example, to update some UI elements or perform further operations
-    } else {
-        qDebug() << "Invalid destination city.";
+        int dist =0;
+        for (int i = 1; i < path.size(); i++)
+        {
+            dist+= graph.getMatrix()[path[i-1]][path[i]];
+        }
+        ui->Distance->setText(QString::number(dist));
     }
-}
-
-
-void GPS_System::on_Shortestdistance_linkActivated(const QString &link)
-{
-
 }
 

@@ -23,10 +23,8 @@ private slots:
     void on_AdsCityB_clicked();
     void on_DeleteCityB_clicked();
     void on_SaveB_clicked();
-    void on_picksource_clicked(); // Add this slot declaration
-    void on_adddestination_clicked(); // Add this slot declaration
 
-    void on_Shortestdistance_linkActivated(const QString &link);
+    void on_computeB_clicked();
 
 private:
     Ui::GPS_System *ui;
