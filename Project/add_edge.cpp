@@ -20,8 +20,11 @@ void Add_Edge::on_AddEdge_clicked()
 {
     QString city2=ui->City2->text();
     int dis =ui->distance->text().toInt();
-    graph.addRoute(City, city2, dis);
-    ui->Confirmation->setText("Edge is now saved!");
+    bool done = graph.addRoute(City, city2, dis);
+    if (done)
+    {
+        ui->Confirmation->setText("Edge is now saved!");
+    }
 }
 
 

@@ -65,7 +65,6 @@ void GPS_System::on_SaveB_clicked()
             {
                 out<<graph.getMatrix()[i][j]<<"\n";
             }
-            out<<"\n";
         }
         file.close();
     }
