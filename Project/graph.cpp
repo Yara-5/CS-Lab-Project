@@ -59,11 +59,13 @@ QString WeightedGraph::printGraph() {
 
 void WeightedGraph::deleteCity(QString city)
 {
-    int index = cities.indexOf(city);
-    cities.erase(cities.begin() + index);
-    for (int i =0;i<matrix.size();i++)
-        matrix[i].erase(matrix[i].begin() + index);
-    matrix.erase(matrix.begin() + index);
+    if (hasCity(city))
+    {   int index = cities.indexOf(city);
+        cities.erase(cities.begin() + index);
+        for (int i =0;i<matrix.size();i++)
+            matrix[i].erase(matrix[i].begin() + index);
+        matrix.erase(matrix.begin() + index);
+    }
 }
 
 
